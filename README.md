@@ -1,2 +1,5 @@
-# db-sql-2C25
-Contiene el esquema que utilizaremos para SQL en el 2C25.
+# Esquema SQL 2C25
+
+Este repositorio contiene el script de docker compose y el script inicial para poblar la base de datos PostgreSQL.
+
+ATENCIÓN: La idea original de este esquema es de Ignacio Suárez Andrés, y podemos encontrar el trabajo original en [este link](https://github.com/nachosandres/database).
