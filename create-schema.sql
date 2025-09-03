@@ -33,7 +33,7 @@ CREATE TABLE moves (
 	PRIMARY KEY (IDMove)
 );
 
-CREATE TABLE "poke-type" (
+CREATE TABLE pokeType (
 	IDpoke SMALLINT NOT NULL ,
 	IDtype SMALLINT NOT NULL,
 	PRIMARY KEY (IDpoke,IDtype),
@@ -41,7 +41,7 @@ CREATE TABLE "poke-type" (
 	CONSTRAINT fk_poketype_type FOREIGN KEY (IDtype) REFERENCES type (IDtype)
 );
 
-CREATE TABLE "poke-egg" (
+CREATE TABLE pokeEgg (
 	IDpoke SMALLINT NOT NULL ,
 	IDegg SMALLINT NOT NULL,
 	PRIMARY KEY (IDpoke,IDegg),
@@ -49,7 +49,7 @@ CREATE TABLE "poke-egg" (
 	CONSTRAINT fk_pokeegg_egg FOREIGN KEY (IDegg) REFERENCES egggroup (IDegg)
 );
 
-CREATE TABLE "poke-move" (
+CREATE TABLE pokeMove (
 	IDpoke SMALLINT NOT NULL ,
 	IDMove SMALLINT NOT NULL,
     slot CHAR(1) NOT NULL,
