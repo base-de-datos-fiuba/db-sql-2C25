@@ -26,11 +26,11 @@ CREATE TABLE type (
 	PRIMARY KEY (IDtype)
 );
 
-CREATE TABLE moves (
-	IDMove SMALLINT NOT NULL,
-	movename CHAR(14) NOT NULL,
-	movedescrip VARCHAR(255) NOT NULL,
-	PRIMARY KEY (IDMove)
+CREATE TABLE abilities (
+	IDAbility SMALLINT NOT NULL,
+	abilityname CHAR(14) NOT NULL,
+	abilitydescrip VARCHAR(255) NOT NULL,
+	PRIMARY KEY (IDAbility)
 );
 
 CREATE TABLE pokeType (
@@ -49,13 +49,13 @@ CREATE TABLE pokeEgg (
 	CONSTRAINT fk_pokeegg_egg FOREIGN KEY (IDegg) REFERENCES egggroup (IDegg)
 );
 
-CREATE TABLE pokeMove (
+CREATE TABLE pokeAbility (
 	IDpoke SMALLINT NOT NULL ,
-	IDMove SMALLINT NOT NULL,
+	IDAbility SMALLINT NOT NULL,
     slot CHAR(1) NOT NULL,
-	PRIMARY KEY (IDpoke,IDMove),
-	CONSTRAINT fk_pokemoves_poke FOREIGN KEY (IDpoke) REFERENCES pokemon (IDpoke),
-	CONSTRAINT fk_pokemoves_move FOREIGN KEY (IDMove) REFERENCES moves (IDMove)
+	PRIMARY KEY (IDpoke,IDAbility),
+	CONSTRAINT fk_pokeAbilitys_poke FOREIGN KEY (IDpoke) REFERENCES pokemon (IDpoke),
+	CONSTRAINT fk_pokeAbilitys_move FOREIGN KEY (IDAbility) REFERENCES abilities (IDAbility)
 );
 
 CREATE TABLE categories (
@@ -101,73 +101,73 @@ INSERT INTO egggroup VALUES (14, 'Dragon');
 INSERT INTO egggroup VALUES (15, 'Undiscovered');
 INSERT INTO egggroup VALUES (16, 'Genderless');
 
-INSERT INTO moves VALUES (65, 'Overgrow', 'Amplifies Grass-type attacks when HP is low');
-INSERT INTO moves VALUES (66, 'Blaze', 'Amplifies Fire-type attacks when HP is low');
-INSERT INTO moves VALUES (67, 'Torrent', 'Amplifies Water-type attacks when HP is low');
-INSERT INTO moves VALUES (14, 'Compound Eyes', 'Boosts Accuracy');
-INSERT INTO moves VALUES (68, 'Swarm', 'Amplifies Bug-type attacks when HP is low');
-INSERT INTO moves VALUES (51, 'Keen Eye', 'Accuracy cannot be reduced by an opponent');
-INSERT INTO moves VALUES (77, 'Tangled Feet', 'Raises Speed when confused');
-INSERT INTO moves VALUES (9, 'Static', 'May paralyze an opponent that makes contact');
-INSERT INTO moves VALUES (8, 'Sand Veil', 'Increases Evasion in a sandstorm');
-INSERT INTO moves VALUES (56, 'Cute Charm', 'May cause infatuation on contact');
-INSERT INTO moves VALUES (98, 'Magic Guard', 'Grants total protection from indirect damage');
-INSERT INTO moves VALUES (11, 'Water Absorb', 'Water-type attacks heal the Pokémon');
-INSERT INTO moves VALUES (6, 'Damp', 'Prevents use of self-destruction attacks by any Pokémon on the field');
-INSERT INTO moves VALUES (26, 'Levitate', 'Grants immunity to Ground-type moves');
-INSERT INTO moves VALUES (12, 'Oblivious', 'Prevents infatuation');
-INSERT INTO moves VALUES (108, 'Forewarn', 'Shows the opponents most powerful move');
-INSERT INTO moves VALUES (33, 'Swift Swim', 'Doubles speed under rain conditions');
-INSERT INTO moves VALUES (75, 'Shell Armor', 'Grants protection from critical hits');
-INSERT INTO moves VALUES (29, 'Clear Body', 'Stats cannot be lowered by an opponent');
-INSERT INTO moves VALUES (34, 'Chlorophyll', 'Doubles speed under intense sunlight');
-INSERT INTO moves VALUES (94, 'Solar Power', 'Under intense sunlight, Sp. Attack increased, 1/8 HP lost every turn');
-INSERT INTO moves VALUES (44, 'Rain Dish', 'Gradually recovers HP in rain');
-INSERT INTO moves VALUES (110, 'Tinted Lens', 'Raises power of uneffective moves');
-INSERT INTO moves VALUES (97, 'Sniper', 'Increases power of critical hits');
-INSERT INTO moves VALUES (145, 'Big Pecks', 'Defense cannot be lowered by an opponent');
-INSERT INTO moves VALUES (31, 'Lightning Rod', 'Redirects Electric-type attacks towards this Pokémon, nullifies them and increases Sp. Attack');
-INSERT INTO moves VALUES (146, 'Sand Rush', 'Doubles speed in a sandstorm');
-INSERT INTO moves VALUES (132, 'Friend Guard', 'Decreases damage inflicted against ally Pokémon');
-INSERT INTO moves VALUES (87, 'Dry Skin', 'Recovers HP in rain, loses HP under intense sunlight');
-INSERT INTO moves VALUES (133, 'Weak Armor', 'Raises Speed and lowers Defense upon being hit');
-INSERT INTO moves VALUES (135, 'Light Metal', 'Halves weight');
-INSERT INTO moves VALUES (201, 'Intimidate',   'Lowers opposing Pokémon Attack on entry');
-INSERT INTO moves VALUES (202, 'Flash Fire',   'Powers up Fire moves if it is hit by one; immunity to Fire');
-INSERT INTO moves VALUES (203, 'Run Away',     'Ensures escape from wild battles');
-INSERT INTO moves VALUES (204, 'Pickup',       'May pick up items after battle');
-INSERT INTO moves VALUES (205, 'Technician',   'Boosts moves with base power 60 or lower');
-INSERT INTO moves VALUES (206, 'Guts',         'Boosts Attack if statused');
-INSERT INTO moves VALUES (207, 'No Guard',     'All moves used by/against this Pokémon never miss');
-INSERT INTO moves VALUES (208, 'Vital Spirit', 'Prevents sleep');
-INSERT INTO moves VALUES (209, 'Insomnia',     'Prevents sleep');
-INSERT INTO moves VALUES (210, 'Synchronize',  'Passes burn/paralyze/poison to the inflictor');
-INSERT INTO moves VALUES (211, 'Own Tempo',    'Prevents confusion');
-INSERT INTO moves VALUES (212, 'Sturdy',       'Survives one-hit KO moves; endures from full HP');
-INSERT INTO moves VALUES (213, 'Rock Head',    'Prevents recoil damage');
-INSERT INTO moves VALUES (214, 'Magnet Pull',  'Prevents Steel-type foes from fleeing; boosts Steel encounters');
-INSERT INTO moves VALUES (215, 'Stench',       'Odor may cause flinching; repels wild encounters');
-INSERT INTO moves VALUES (216, 'Sticky Hold',  'Prevents item theft; sticky grip');
-INSERT INTO moves VALUES (217, 'Liquid Ooze',  'Draining moves damage the user instead of healing');
-INSERT INTO moves VALUES (218, 'Skill Link',   'Multi-hit moves always strike the maximum number of times');
-INSERT INTO moves VALUES (219, 'Thick Fat',    'Halves damage from Fire and Ice moves');
-INSERT INTO moves VALUES (220, 'Hydration',    'Heals status in rain at end of turn');
-INSERT INTO moves VALUES (221, 'Arena Trap',   'Prevents grounded foes from escaping/switching');
-INSERT INTO moves VALUES (222, 'Poison Point', 'Contact may poison the attacker');
-INSERT INTO moves VALUES (223, 'Rivalry',      'Boosts damage vs. same gender; lowers vs. opposite');
-INSERT INTO moves VALUES (224, 'Gluttony',     'Eats pinch berries at higher HP threshold');
-INSERT INTO moves VALUES (225, 'Effect Spore', 'Contact may inflict sleep/poison/paralysis');
-INSERT INTO moves VALUES (226, 'Cloud Nine',   'Negates effects of weather');
-INSERT INTO moves VALUES (227, 'Early Bird',   'Wakes up quickly');
-
 INSERT INTO categories VALUES (1, 'Physical');
 INSERT INTO categories VALUES (2, 'Special');
 INSERT INTO categories VALUES (3, 'Status');
 
+INSERT INTO abilities VALUES (65, 'Overgrow', 'Amplifies Grass-type attacks when HP is low');
+INSERT INTO abilities VALUES (66, 'Blaze', 'Amplifies Fire-type attacks when HP is low');
+INSERT INTO abilities VALUES (67, 'Torrent', 'Amplifies Water-type attacks when HP is low');
+INSERT INTO abilities VALUES (14, 'Compound Eyes', 'Boosts Accuracy');
+INSERT INTO abilities VALUES (68, 'Swarm', 'Amplifies Bug-type attacks when HP is low');
+INSERT INTO abilities VALUES (51, 'Keen Eye', 'Accuracy cannot be reduced by an opponent');
+INSERT INTO abilities VALUES (77, 'Tangled Feet', 'Raises Speed when confused');
+INSERT INTO abilities VALUES (9, 'Static', 'May paralyze an opponent that makes contact');
+INSERT INTO abilities VALUES (8, 'Sand Veil', 'Increases Evasion in a sandstorm');
+INSERT INTO abilities VALUES (56, 'Cute Charm', 'May cause infatuation on contact');
+INSERT INTO abilities VALUES (98, 'Magic Guard', 'Grants total protection from indirect damage');
+INSERT INTO abilities VALUES (11, 'Water Absorb', 'Water-type attacks heal the Pokémon');
+INSERT INTO abilities VALUES (6, 'Damp', 'Prevents use of self-destruction attacks by any Pokémon on the field');
+INSERT INTO abilities VALUES (26, 'Levitate', 'Grants immunity to Ground-type moves');
+INSERT INTO abilities VALUES (12, 'Oblivious', 'Prevents infatuation');
+INSERT INTO abilities VALUES (108, 'Forewarn', 'Shows the opponents most powerful move');
+INSERT INTO abilities VALUES (33, 'Swift Swim', 'Doubles speed under rain conditions');
+INSERT INTO abilities VALUES (75, 'Shell Armor', 'Grants protection from critical hits');
+INSERT INTO abilities VALUES (29, 'Clear Body', 'Stats cannot be lowered by an opponent');
+INSERT INTO abilities VALUES (34, 'Chlorophyll', 'Doubles speed under intense sunlight');
+INSERT INTO abilities VALUES (94, 'Solar Power', 'Under intense sunlight, Sp. Attack increased, 1/8 HP lost every turn');
+INSERT INTO abilities VALUES (44, 'Rain Dish', 'Gradually recovers HP in rain');
+INSERT INTO abilities VALUES (110, 'Tinted Lens', 'Raises power of uneffective moves');
+INSERT INTO abilities VALUES (97, 'Sniper', 'Increases power of critical hits');
+INSERT INTO abilities VALUES (145, 'Big Pecks', 'Defense cannot be lowered by an opponent');
+INSERT INTO abilities VALUES (31, 'Lightning Rod', 'Redirects Electric-type attacks towards this Pokémon, nullifies them and increases Sp. Attack');
+INSERT INTO abilities VALUES (146, 'Sand Rush', 'Doubles speed in a sandstorm');
+INSERT INTO abilities VALUES (132, 'Friend Guard', 'Decreases damage inflicted against ally Pokémon');
+INSERT INTO abilities VALUES (87, 'Dry Skin', 'Recovers HP in rain, loses HP under intense sunlight');
+INSERT INTO abilities VALUES (133, 'Weak Armor', 'Raises Speed and lowers Defense upon being hit');
+INSERT INTO abilities VALUES (135, 'Light Metal', 'Halves weight');
+INSERT INTO abilities VALUES (201, 'Intimidate',   'Lowers opposing Pokémon Attack on entry');
+INSERT INTO abilities VALUES (202, 'Flash Fire',   'Powers up Fire moves if it is hit by one; immunity to Fire');
+INSERT INTO abilities VALUES (203, 'Run Away',     'Ensures escape from wild battles');
+INSERT INTO abilities VALUES (204, 'Pickup',       'May pick up items after battle');
+INSERT INTO abilities VALUES (205, 'Technician',   'Boosts moves with base power 60 or lower');
+INSERT INTO abilities VALUES (206, 'Guts',         'Boosts Attack if statused');
+INSERT INTO abilities VALUES (207, 'No Guard',     'All moves used by/against this Pokémon never miss');
+INSERT INTO abilities VALUES (208, 'Vital Spirit', 'Prevents sleep');
+INSERT INTO abilities VALUES (209, 'Insomnia',     'Prevents sleep');
+INSERT INTO abilities VALUES (210, 'Synchronize',  'Passes burn/paralyze/poison to the inflictor');
+INSERT INTO abilities VALUES (211, 'Own Tempo',    'Prevents confusion');
+INSERT INTO abilities VALUES (212, 'Sturdy',       'Survives one-hit KO moves; endures from full HP');
+INSERT INTO abilities VALUES (213, 'Rock Head',    'Prevents recoil damage');
+INSERT INTO abilities VALUES (214, 'Magnet Pull',  'Prevents Steel-type foes from fleeing; boosts Steel encounters');
+INSERT INTO abilities VALUES (215, 'Stench',       'Odor may cause flinching; repels wild encounters');
+INSERT INTO abilities VALUES (216, 'Sticky Hold',  'Prevents item theft; sticky grip');
+INSERT INTO abilities VALUES (217, 'Liquid Ooze',  'Draining moves damage the user instead of healing');
+INSERT INTO abilities VALUES (218, 'Skill Link',   'Multi-hit moves always strike the maximum number of times');
+INSERT INTO abilities VALUES (219, 'Thick Fat',    'Halves damage from Fire and Ice moves');
+INSERT INTO abilities VALUES (220, 'Hydration',    'Heals status in rain at end of turn');
+INSERT INTO abilities VALUES (221, 'Arena Trap',   'Prevents grounded foes from escaping/switching');
+INSERT INTO abilities VALUES (222, 'Poison Point', 'Contact may poison the attacker');
+INSERT INTO abilities VALUES (223, 'Rivalry',      'Boosts damage vs. same gender; lowers vs. opposite');
+INSERT INTO abilities VALUES (224, 'Gluttony',     'Eats pinch berries at higher HP threshold');
+INSERT INTO abilities VALUES (225, 'Effect Spore', 'Contact may inflict sleep/poison/paralysis');
+INSERT INTO abilities VALUES (226, 'Cloud Nine',   'Negates effects of weather');
+INSERT INTO abilities VALUES (227, 'Early Bird',   'Wakes up quickly');
+
 ALTER TABLE pokemon ADD CONSTRAINT unique_pokename UNIQUE (pokename);
 ALTER TABLE egggroup ADD CONSTRAINT unique_eggname UNIQUE (eggname);
 ALTER TABLE type ADD CONSTRAINT unique_typename UNIQUE (typename);
-ALTER TABLE moves ADD CONSTRAINT unique_abilityname UNIQUE (movename);
+ALTER TABLE abilities ADD CONSTRAINT unique_abilityname UNIQUE (abilityname);
 ALTER TABLE categories ADD CONSTRAINT unique_category UNIQUE (category);
 
 -- PostgreSQL function syntax
