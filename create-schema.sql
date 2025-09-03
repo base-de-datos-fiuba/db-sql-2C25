@@ -32,6 +32,25 @@ CREATE TABLE abilities (
 	abilitydescrip VARCHAR(255) NOT NULL,
 	PRIMARY KEY (IDAbility)
 );
+CREATE TABLE categories (
+  IDcat SMALLINT NOT NULL,
+  category CHAR(8) NOT NULL,
+   PRIMARY KEY (IDcat)
+);
+
+CREATE TABLE moves (
+  IDmove SMALLINT NOT NULL,
+  movename CHAR(16) NOT NULL ,
+  IDtype SMALLINT NOT NULL,
+  IDcat SMALLINT NOT NULL,
+  power SMALLINT NOT NULL,
+  accuracy SMALLINT NOT NULL,
+  PP SMALLINT NOT NULL,
+  effect VARCHAR(255) NOT NULL,
+  PRIMARY KEY (IDmove),
+  CONSTRAINT fk_moves_type FOREIGN KEY (IDtype) REFERENCES type (IDtype),
+  CONSTRAINT fk_moves_cat FOREIGN KEY (IDcat) REFERENCES categories (IDcat)
+);
 
 CREATE TABLE pokeType (
 	IDpoke SMALLINT NOT NULL ,
@@ -58,10 +77,13 @@ CREATE TABLE pokeAbility (
 	CONSTRAINT fk_pokeAbilitys_move FOREIGN KEY (IDAbility) REFERENCES abilities (IDAbility)
 );
 
-CREATE TABLE categories (
-  IDcat SMALLINT NOT NULL,
-  category CHAR(8) NOT NULL,
-   PRIMARY KEY (IDcat)
+CREATE TABLE pokeMoves (
+	IDpoke SMALLINT NOT NULL ,
+	IDMove SMALLINT NOT NULL,
+    slot SMALLINT NOT NULL CHECK (slot >= 1 AND slot <= 4),
+	PRIMARY KEY (IDpoke,IDMove),
+	CONSTRAINT fk_pokeMoves_poke FOREIGN KEY (IDpoke) REFERENCES pokemon (IDpoke),
+	CONSTRAINT fk_pokeMoves_move FOREIGN KEY (IDMove) REFERENCES moves (IDmove)
 );
 
 INSERT INTO type VALUES (1, 'Normal');
@@ -104,6 +126,44 @@ INSERT INTO egggroup VALUES (16, 'Genderless');
 INSERT INTO categories VALUES (1, 'Physical');
 INSERT INTO categories VALUES (2, 'Special');
 INSERT INTO categories VALUES (3, 'Status');
+
+INSERT INTO moves VALUES
+  (1,  'Tackle',         1, 1, 40, 100, 35, 'Basic physical strike'),
+  (2,  'Growl',          1, 3, 0,  100, 40, 'Lowers target Attack by 1 stage'),
+  (3,  'Vine Whip',     12, 1, 45, 100, 25, 'Whips target with vines'),
+  (4,  'Ember',         10, 2, 40, 100, 25, '10% chance to burn'),
+  (5,  'Water Gun',     11, 2, 40, 100, 25, 'Sprays water at target'),
+  (6,  'Thunderbolt',   13, 2, 90, 100, 15, '10% chance to paralyze'),
+  (7,  'Ice Beam',      15, 2, 90, 100, 10, '10% chance to freeze'),
+  (8,  'Quick Attack',   1, 1, 40, 100, 30, 'Priority +1'),
+  (9,  'Gust',           3, 2, 40, 100, 35, 'Ranged wind attack'),
+  (10, 'Peck',           3, 1, 35, 100, 35, 'Jabs with a beak'),
+  (11, 'Confusion',     14, 2, 50, 100, 25, '10% chance to confuse'),
+  (12, 'Psychic',       14, 2, 90, 100, 10, '10% chance to lower Sp. Def'),
+  (13, 'Earthquake',     5, 1,100, 100, 10, 'Hits all adjacent grounded targets'),
+  (14, 'Rock Slide',     6, 1, 75,  90, 10, '30% chance to flinch'),
+  (15, 'Hyper Beam',     1, 2,150,  90, 5,  'User must recharge next turn'),
+  (16, 'Slash',          1, 1, 70, 100, 20, 'High critical-hit ratio'),
+  (17, 'Poison Sting',   4, 1, 15, 100, 35, '30% chance to poison'),
+  (18, 'String Shot',    7, 3, 0,   95, 40, 'Lowers target Speed by 1 stage'),
+  (19, 'Harden',         1, 3, 0,    0, 30, 'Raises user Defense by 1 stage'),
+  (20, 'Sleep Powder',  12, 3, 0,   75, 15, 'Puts target to sleep'),
+  (21, 'Hypnosis',      14, 3, 0,   60, 20, 'Puts target to sleep'),
+  (22, 'Lick',           8, 1, 30, 100, 30, '30% chance to paralyze'),
+  (23, 'Night Shade',    8, 2, 0,  100, 15, 'Deals damage equal to user level'),
+  (24, 'Dragon Rage',   16, 2, 0,  100, 10, 'Always deals 40 HP damage'),
+  (25, 'Surf',          11, 2, 90, 100, 15, 'Powerful water wave'),
+  (26, 'Flamethrower',  10, 2, 90, 100, 15, '10% chance to burn'),
+  (27, 'Razor Leaf',    12, 1, 55,  95, 25, 'High critical-hit ratio'),
+  (28, 'ThunderShock',  13, 2, 40, 100, 30, '10% chance to paralyze'),
+  (29, 'Double Kick',    2, 1, 30, 100, 30, 'Hits twice'),
+  (30, 'Karate Chop',    2, 1, 50, 100, 25, 'Solid chop'),
+  (31, 'Wing Attack',    3, 1, 60, 100, 35, 'Strikes with wings'),
+  (32, 'Bubble',        11, 2, 40, 100, 30, '10% chance to lower Speed'),
+  (33, 'Scratch',        1, 1, 40, 100, 35, 'Basic claw attack'),
+  (34, 'Teleport',      14, 3, 0,    0, 20, 'Escapes/wild battle utility'),
+  (35, 'Splash',         1, 3, 0,    0, 40, 'No effect'),
+  (36, 'Blizzard',      15, 2,110,  70, 5,  '10% chance to freeze');
 
 INSERT INTO abilities VALUES (65, 'Overgrow', 'Amplifies Grass-type attacks when HP is low');
 INSERT INTO abilities VALUES (66, 'Blaze', 'Amplifies Fire-type attacks when HP is low');

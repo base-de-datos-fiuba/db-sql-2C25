@@ -643,4 +643,264 @@ INSERT INTO pokeType VALUES (635,16); INSERT INTO pokeType VALUES (635,17);
 INSERT INTO pokeEgg VALUES (635,14);
 INSERT INTO pokeAbility VALUES (635,26,'1');
 
+
+-- Moves Section
+
+-- Bulbasaur line
+INSERT INTO pokeMoves VALUES (1,  1, 1);  -- Tackle
+INSERT INTO pokeMoves VALUES (1,  2, 2);  -- Growl
+INSERT INTO pokeMoves VALUES (1,  3, 3);  -- Vine Whip
+INSERT INTO pokeMoves VALUES (1, 27, 4);  -- Razor Leaf
+
+INSERT INTO pokeMoves VALUES (2,  1, 1);
+INSERT INTO pokeMoves VALUES (2,  3, 2);
+INSERT INTO pokeMoves VALUES (2, 27, 3);
+INSERT INTO pokeMoves VALUES (2, 12, 4);  -- Psychic
+
+INSERT INTO pokeMoves VALUES (3,  1, 1);
+INSERT INTO pokeMoves VALUES (3, 27, 2);
+INSERT INTO pokeMoves VALUES (3, 20, 3);  -- Sleep Powder
+INSERT INTO pokeMoves VALUES (3, 15, 4);  -- Hyper Beam
+
+-- Charmander line
+INSERT INTO pokeMoves VALUES (4, 33, 1);  -- Scratch
+INSERT INTO pokeMoves VALUES (4,  2, 2);  -- Growl
+INSERT INTO pokeMoves VALUES (4,  4, 3);  -- Ember
+INSERT INTO pokeMoves VALUES (4, 16, 4);  -- Slash
+
+INSERT INTO pokeMoves VALUES (5, 33, 1);
+INSERT INTO pokeMoves VALUES (5,  4, 2);
+INSERT INTO pokeMoves VALUES (5, 26, 3);  -- Flamethrower
+INSERT INTO pokeMoves VALUES (5, 16, 4);
+
+INSERT INTO pokeMoves VALUES (6, 33, 1);
+INSERT INTO pokeMoves VALUES (6, 26, 2);
+INSERT INTO pokeMoves VALUES (6, 31, 3);  -- Wing Attack
+INSERT INTO pokeMoves VALUES (6, 15, 4);
+
+-- Squirtle line
+INSERT INTO pokeMoves VALUES (7,  1, 1);
+INSERT INTO pokeMoves VALUES (7,  5, 2);  -- Water Gun
+INSERT INTO pokeMoves VALUES (7, 32, 3);  -- Bubble
+INSERT INTO pokeMoves VALUES (7, 25, 4);  -- Surf
+
+INSERT INTO pokeMoves VALUES (8,  1, 1);
+INSERT INTO pokeMoves VALUES (8,  5, 2);
+INSERT INTO pokeMoves VALUES (8, 25, 3);
+INSERT INTO pokeMoves VALUES (8, 15, 4);
+
+INSERT INTO pokeMoves VALUES (9,  1, 1);
+INSERT INTO pokeMoves VALUES (9, 25, 2);
+INSERT INTO pokeMoves VALUES (9, 13, 3);  -- Earthquake
+INSERT INTO pokeMoves VALUES (9, 15, 4);
+
+-- Caterpie line
+INSERT INTO pokeMoves VALUES (10, 1, 1);
+INSERT INTO pokeMoves VALUES (10,18, 2);  -- String Shot
+INSERT INTO pokeMoves VALUES (10,19, 3);  -- Harden
+INSERT INTO pokeMoves VALUES (10, 2, 4);
+
+INSERT INTO pokeMoves VALUES (11,19, 1);
+INSERT INTO pokeMoves VALUES (11,18, 2);
+INSERT INTO pokeMoves VALUES (11, 1, 3);
+INSERT INTO pokeMoves VALUES (11, 2, 4);
+
+INSERT INTO pokeMoves VALUES (12,11, 1);  -- Confusion
+INSERT INTO pokeMoves VALUES (12,20, 2);  -- Sleep Powder
+INSERT INTO pokeMoves VALUES (12, 7, 3);  -- Ice Beam
+INSERT INTO pokeMoves VALUES (12, 15, 4);
+
+-- Weedle line
+INSERT INTO pokeMoves VALUES (13,17, 1);   -- Weedle     → Poison Sting
+INSERT INTO pokeMoves VALUES (14,19, 1);   -- Kakuna     → Harden
+INSERT INTO pokeMoves VALUES (15,17, 1);   -- Beedrill   → Poison Sting
+
+-- Pidgey line
+INSERT INTO pokeMoves VALUES (16, 1, 1);
+INSERT INTO pokeMoves VALUES (16, 9, 2);  -- Gust
+INSERT INTO pokeMoves VALUES (16, 8, 3);  -- Quick Attack
+INSERT INTO pokeMoves VALUES (16,31, 4);
+
+INSERT INTO pokeMoves VALUES (17, 1, 1);
+INSERT INTO pokeMoves VALUES (17, 9, 2);
+INSERT INTO pokeMoves VALUES (17,31, 3);
+INSERT INTO pokeMoves VALUES (17,15, 4);
+
+INSERT INTO pokeMoves VALUES (18, 1, 1);
+INSERT INTO pokeMoves VALUES (18,31, 2);
+INSERT INTO pokeMoves VALUES (18,15, 3);
+INSERT INTO pokeMoves VALUES (18, 9, 4);
+-- Rattata line
+INSERT INTO pokeMoves VALUES (19, 1, 1);   -- Rattata    → Tackle
+INSERT INTO pokeMoves VALUES (20,16, 1);   -- Raticate   → Slash
+
+-- Spearow line
+INSERT INTO pokeMoves VALUES (21,10, 1);   -- Spearow    → Peck
+INSERT INTO pokeMoves VALUES (22,31, 1);   -- Fearow     → Wing Attack
+
+-- Ekans line
+INSERT INTO pokeMoves VALUES (23,17, 1);   -- Ekans      → Poison Sting
+INSERT INTO pokeMoves VALUES (24,16, 1);   -- Arbok      → Slash
+
+-- Pikachu line
+INSERT INTO pokeMoves VALUES (25,28, 1);  -- ThunderShock
+INSERT INTO pokeMoves VALUES (25, 8, 2);
+INSERT INTO pokeMoves VALUES (25, 6, 3);  -- Thunderbolt
+INSERT INTO pokeMoves VALUES (25,15, 4);
+INSERT INTO pokeMoves VALUES (26, 6, 1);   -- Raichu     → Thunderbolt
+
+-- Sandshrew line
+INSERT INTO pokeMoves VALUES (27,13, 1);   -- Sandshrew  → Earthquake
+INSERT INTO pokeMoves VALUES (28,13, 1);   -- Sandslash  → Earthquake
+
+-- Nidoran♀ line
+INSERT INTO pokeMoves VALUES (29,17, 1);   -- Nidoran♀   → Poison Sting
+INSERT INTO pokeMoves VALUES (30,17, 1);   -- Nidorina   → Poison Sting
+INSERT INTO pokeMoves VALUES (31,13, 1);   -- Nidoqueen  → Earthquake
+
+-- Nidoran♂ line
+INSERT INTO pokeMoves VALUES (32,17, 1);   -- Nidoran♂   → Poison Sting
+INSERT INTO pokeMoves VALUES (33,16, 1);   -- Nidorino   → Slash
+INSERT INTO pokeMoves VALUES (34,13, 1);   -- Nidoking   → Earthquake
+
+-- Clefairy line
+INSERT INTO pokeMoves VALUES (35,12, 1);   -- Clefairy   → Psychic
+INSERT INTO pokeMoves VALUES (36,12, 1);   -- Clefable   → Psychic
+
+-- Vulpix line
+INSERT INTO pokeMoves VALUES (37, 4, 1);   -- Vulpix     → Ember
+INSERT INTO pokeMoves VALUES (38,26, 1);   -- Ninetales  → Flamethrower
+
+-- Jigglypuff line
+INSERT INTO pokeMoves VALUES (39, 2, 1);   -- Jigglypuff → Growl
+INSERT INTO pokeMoves VALUES (40,15, 1);   -- Wigglytuff → Hyper Beam
+
+-- Zubat line
+INSERT INTO pokeMoves VALUES (41,10, 1);   -- Zubat      → Peck
+INSERT INTO pokeMoves VALUES (42,31, 1);   -- Golbat     → Wing Attack
+
+-- Oddish line
+INSERT INTO pokeMoves VALUES (43, 3, 1);   -- Oddish     → Vine Whip
+INSERT INTO pokeMoves VALUES (44,27, 1);   -- Gloom      → Razor Leaf
+INSERT INTO pokeMoves VALUES (45,27, 1);   -- Vileplume  → Razor Leaf
+
+-- Paras line
+INSERT INTO pokeMoves VALUES (46, 3, 1);   -- Paras      → Vine Whip
+INSERT INTO pokeMoves VALUES (47,27, 1);   -- Parasect   → Razor Leaf
+
+-- Venonat line
+INSERT INTO pokeMoves VALUES (48,18, 1);   -- Venonat    → String Shot
+INSERT INTO pokeMoves VALUES (49,11, 1);   -- Venomoth   → Confusion
+
+-- Diglett line
+INSERT INTO pokeMoves VALUES (50,13, 1);   -- Diglett    → Earthquake
+INSERT INTO pokeMoves VALUES (51,13, 1);   -- Dugtrio    → Earthquake
+
+-- Meowth line
+INSERT INTO pokeMoves VALUES (52, 1, 1);   -- Meowth     → Tackle
+INSERT INTO pokeMoves VALUES (53,16, 1);   -- Persian    → Slash
+
+-- Psyduck line
+INSERT INTO pokeMoves VALUES (54, 5, 1);   -- Psyduck    → Water Gun
+INSERT INTO pokeMoves VALUES (55,25, 1);   -- Golduck    → Surf
+
+-- Mankey line
+INSERT INTO pokeMoves VALUES (56,30, 1);   -- Mankey     → Karate Chop
+INSERT INTO pokeMoves VALUES (57,29, 1);   -- Primeape   → Double Kick
+
+-- Growlithe line
+INSERT INTO pokeMoves VALUES (58, 4, 1);   -- Growlithe  → Ember
+INSERT INTO pokeMoves VALUES (59,26, 1);   -- Arcanine   → Flamethrower
+
+-- Poliwag line
+INSERT INTO pokeMoves VALUES (60,32, 1);   -- Poliwag    → Bubble
+INSERT INTO pokeMoves VALUES (61, 5, 1);   -- Poliwhirl  → Water Gun
+INSERT INTO pokeMoves VALUES (62,25, 1);   -- Poliwrath  → Surf
+
+-- Abra line
+INSERT INTO pokeMoves VALUES (63,34, 1);   -- Abra       → Teleport
+INSERT INTO pokeMoves VALUES (64,11, 1);   -- Kadabra    → Confusion
+INSERT INTO pokeMoves VALUES (65,12, 1);   -- Alakazam   → Psychic
+
+-- Machop line
+INSERT INTO pokeMoves VALUES (66,30, 1);   -- Machop     → Karate Chop
+INSERT INTO pokeMoves VALUES (67,29, 1);   -- Machoke    → Double Kick
+INSERT INTO pokeMoves VALUES (68,13, 1);   -- Machamp    → Earthquake
+
+-- Bellsprout line
+INSERT INTO pokeMoves VALUES (69, 3, 1);   -- Bellsprout → Vine Whip
+INSERT INTO pokeMoves VALUES (70,27, 1);   -- Weepinbell → Razor Leaf
+INSERT INTO pokeMoves VALUES (71,27, 1);   -- Victreebel → Razor Leaf
+
+-- Tentacool line
+INSERT INTO pokeMoves VALUES (72, 5, 1);   -- Tentacool  → Water Gun
+INSERT INTO pokeMoves VALUES (73,25, 1);   -- Tentacruel → Surf
+
+-- Geodude line
+INSERT INTO pokeMoves VALUES (74,14, 1);   -- Geodude    → Rock Slide
+INSERT INTO pokeMoves VALUES (75,13, 1);   -- Graveler   → Earthquake
+INSERT INTO pokeMoves VALUES (76,14, 1);   -- Golem      → Rock Slide
+
+-- Ponyta line
+INSERT INTO pokeMoves VALUES (77, 4, 1);   -- Ponyta     → Ember
+INSERT INTO pokeMoves VALUES (78,26, 1);   -- Rapidash   → Flamethrower
+
+-- Slowpoke line
+INSERT INTO pokeMoves VALUES (79,11, 1);   -- Slowpoke   → Confusion
+INSERT INTO pokeMoves VALUES (80,12, 1);   -- Slowbro    → Psychic
+
+-- Magnemite line
+INSERT INTO pokeMoves VALUES (81,28, 1);   -- Magnemite  → ThunderShock
+INSERT INTO pokeMoves VALUES (82, 6, 1);   -- Magneton   → Thunderbolt
+
+-- Farfetch’d
+INSERT INTO pokeMoves VALUES (83,31, 1);   -- Farfetch’d → Wing Attack
+
+-- Doduo line
+INSERT INTO pokeMoves VALUES (84,31, 1);   -- Doduo      → Wing Attack
+INSERT INTO pokeMoves VALUES (85,16, 1);   -- Dodrio     → Slash
+
+-- Seel line
+INSERT INTO pokeMoves VALUES (86, 7, 1);   -- Seel       → Ice Beam
+INSERT INTO pokeMoves VALUES (87,36, 1);   -- Dewgong    → Blizzard
+
+-- Grimer line
+INSERT INTO pokeMoves VALUES (88,17, 1);   -- Grimer     → Poison Sting
+INSERT INTO pokeMoves VALUES (89,13, 1);   -- Muk        → Earthquake
+
+-- Shellder line
+INSERT INTO pokeMoves VALUES (90, 5, 1);   -- Shellder   → Water Gun
+INSERT INTO pokeMoves VALUES (91,36, 1);   -- Cloyster   → Blizzard
+-- Gastly line
+INSERT INTO pokeMoves VALUES (92,22, 1);  -- Lick
+INSERT INTO pokeMoves VALUES (92,21, 2);  -- Hypnosis
+INSERT INTO pokeMoves VALUES (92,23, 3);  -- Night Shade
+INSERT INTO pokeMoves VALUES (92,12, 4);
+
+INSERT INTO pokeMoves VALUES (93,22, 1);
+INSERT INTO pokeMoves VALUES (93,21, 2);
+INSERT INTO pokeMoves VALUES (93,23, 3);
+INSERT INTO pokeMoves VALUES (93,12, 4);
+
+INSERT INTO pokeMoves VALUES (94,22, 1);
+INSERT INTO pokeMoves VALUES (94,21, 2);
+INSERT INTO pokeMoves VALUES (94,12, 3);
+INSERT INTO pokeMoves VALUES (94,15, 4);
+-- Onix
+INSERT INTO pokeMoves VALUES (95,14, 1);   -- Onix       → Rock Slide
+
+-- Drowzee
+INSERT INTO pokeMoves VALUES (96,11, 1);   -- Drowzee    → Confusion
+
+-- Jynx
+INSERT INTO pokeMoves VALUES (124, 7, 1);  -- Jynx       → Ice Beam
+
+-- Omastar
+INSERT INTO pokeMoves VALUES (139,25, 1);  -- Omastar    → Surf
+
+-- Metagross
+INSERT INTO pokeMoves VALUES (376,12, 1);  -- Metagross  → Psychic
+
+-- Hydreigon
+INSERT INTO pokeMoves VALUES (635,24, 1);  -- Hydreigon  → Dragon Rage
 COMMIT;
