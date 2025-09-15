@@ -223,6 +223,8 @@ INSERT INTO abilities VALUES (224, 'Gluttony',     'Eats pinch berries at higher
 INSERT INTO abilities VALUES (225, 'Effect Spore', 'Contact may inflict sleep/poison/paralysis');
 INSERT INTO abilities VALUES (226, 'Cloud Nine',   'Negates effects of weather');
 INSERT INTO abilities VALUES (227, 'Early Bird',   'Wakes up quickly');
+INSERT INTO abilities VALUES (46, 'Pressure', 'The foe uses 2 PP instead of 1 for moves');
+
 
 ALTER TABLE pokemon ADD CONSTRAINT unique_pokename UNIQUE (pokename);
 ALTER TABLE egggroup ADD CONSTRAINT unique_eggname UNIQUE (eggname);

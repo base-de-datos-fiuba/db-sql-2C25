@@ -511,13 +511,13 @@ INSERT INTO pokeAbility VALUES (80,211,'2');
 INSERT INTO pokemon VALUES (81, 'Magnemite',25, 35, 70, 95, 55, 45, true);
 INSERT INTO pokeType VALUES (81,13); INSERT INTO pokeType VALUES (81,9);
 INSERT INTO pokeEgg  VALUES (81,16);
-INSERT INTO pokeAbility VALUES (81,29,'1');
+INSERT INTO pokeAbility VALUES (81,26,'1');
 INSERT INTO pokeAbility VALUES (81,212,'2');
 
 INSERT INTO pokemon VALUES (82, 'Magneton', 50, 60, 95,120, 70, 70, true);
 INSERT INTO pokeType VALUES (82,13); INSERT INTO pokeType VALUES (82,9);
 INSERT INTO pokeEgg  VALUES (82,16);
-INSERT INTO pokeAbility VALUES (82,29,'1');
+INSERT INTO pokeAbility VALUES (82,26,'1');
 INSERT INTO pokeAbility VALUES (82,212,'2');
 INSERT INTO pokeAbility VALUES (82,214,'3');
 
@@ -629,6 +629,25 @@ INSERT INTO pokeEgg VALUES (139,2); INSERT INTO pokeEgg VALUES (139,9);
 INSERT INTO pokeAbility VALUES (139,33,'1');
 INSERT INTO pokeAbility VALUES (139,75,'2');
 INSERT INTO pokeAbility VALUES (139,133,'3');
+
+-- Articuno ------------------------------------------------------
+INSERT INTO pokemon VALUES (144, 'Articuno', 90, 85, 100, 95, 125, 85, true);
+INSERT INTO pokeType VALUES (144,15); INSERT INTO pokeType VALUES (144,3);
+INSERT INTO pokeEgg VALUES (144,15);
+INSERT INTO pokeAbility VALUES (144,46,'1');  -- Pressure (ejemplo, ajusta si tu set difiere)
+
+-- Zapdos --------------------------------------------------------
+INSERT INTO pokemon VALUES (145, 'Zapdos', 90, 90, 85, 125, 90, 100, true);
+INSERT INTO pokeType VALUES (145,13); INSERT INTO pokeType VALUES (145,3);
+INSERT INTO pokeEgg VALUES (145,15);
+INSERT INTO pokeAbility VALUES (145,46,'1');  -- Pressure
+
+-- Moltres -------------------------------------------------------
+INSERT INTO pokemon VALUES (146, 'Moltres', 90, 100, 90, 125, 85, 90, true);
+INSERT INTO pokeType VALUES (146,10); INSERT INTO pokeType VALUES (146,3);
+INSERT INTO pokeEgg VALUES (146,15);
+INSERT INTO pokeAbility VALUES (146,46,'1');  -- Pressure
+
 
 -- Metagross -----------------------------------------------------
 INSERT INTO pokemon VALUES (376, 'Metagross', 80, 135, 130, 95, 90, 70, true);
@@ -903,4 +922,23 @@ INSERT INTO pokeMoves VALUES (376,12, 1);  -- Metagross  → Psychic
 
 -- Hydreigon
 INSERT INTO pokeMoves VALUES (635,24, 1);  -- Hydreigon  → Dragon Rage
+
+-- Articuno
+INSERT INTO pokeMoves VALUES (144, 7, 1);   -- Ice Beam
+INSERT INTO pokeMoves VALUES (144,31, 2);   -- Wing Attack
+INSERT INTO pokeMoves VALUES (144,36, 3);   -- Blizzard
+INSERT INTO pokeMoves VALUES (144,15, 4);   -- Hyper Beam
+
+-- Zapdos
+INSERT INTO pokeMoves VALUES (145, 6, 1);   -- Thunderbolt
+INSERT INTO pokeMoves VALUES (145,28, 2);   -- ThunderShock
+INSERT INTO pokeMoves VALUES (145,31, 3);   -- Wing Attack
+INSERT INTO pokeMoves VALUES (145,15, 4);   -- Hyper Beam
+
+-- Moltres
+INSERT INTO pokeMoves VALUES (146,26, 1);   -- Flamethrower
+INSERT INTO pokeMoves VALUES (146, 4, 2);   -- Ember
+INSERT INTO pokeMoves VALUES (146,31, 3);   -- Wing Attack
+INSERT INTO pokeMoves VALUES (146,15, 4);   -- Hyper Beam
+
 COMMIT;
